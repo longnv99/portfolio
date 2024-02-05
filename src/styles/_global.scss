@@ -1,0 +1,40 @@
+:root {
+  animation: rainbow 40s linear infinite;
+}
+
+.logo {
+  stroke: var(--highlight-color);
+  transition: stroke 1s;
+
+  & > g {
+    stroke-dashoffset: 1px;
+    stroke-dasharray: 350px 0px;
+    animation: logoDraw 8s ease forwards infinite;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: $breakpoint_large_desktop_max;
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint_large_desktop_max) {
+    max-width: $breakpoint_ultra_tablet_max;
+  }
+
+  @media (max-width: $breakpoint_ultra_tablet_max) {
+    max-width: $breakpoint_desktop_max;
+  }
+
+  @media (max-width: $breakpoint_desktop_max) {
+    max-width: $breakpoint_large_table_max;
+  }
+
+  @media (max-width: $breakpoint_large_table_max) {
+    max-width: $breakpoint_tablet_max;
+  }
+
+  @media (max-width: $breakpoint_tablet_max) {
+    max-width: calc(100vw - 28px);
+  }
+}

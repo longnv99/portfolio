@@ -1,0 +1,48 @@
+:root {
+  --primary-color: #000000;
+  --highlight-color: #00a98e;
+  --bg-header: #ffffffa6;
+  --text-color: #000000;
+  --overlay-color: rgb(255, 255, 255, 0.9);
+  --bg-color: #ffffff;
+
+  --hue: 223;
+  --bg: hsl(var(--hue), 10%, 90%);
+  --fg: hsl(var(--hue), 10%, 10%);
+  --primary: hsl(var(--hue), 90%, 50%);
+  --trans-dur: 0.3s;
+  --trans-timing: cubic-bezier(0.76, 0.05, 0.24, 0.95);
+  --trans-timing-in: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+  --trans-timing-out: cubic-bezier(0.05, 0.76, 0.06, 0.86);
+}
+
+[data-theme="dark"] {
+  --primary-color: #ffffff;
+  --highlight-color: #00a98e;
+  --bg-header: #000000a6;
+  --text-color: #ffffff;
+  --overlay-color: rgb(0, 0, 0, 0.9);
+  --bg-color: #000000;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+[data-theme="dark"]::view-transition-old(root) {
+  z-index: 9999;
+}
+
+[data-theme="dark"]::view-transition-new(root) {
+  z-index: 1;
+}
