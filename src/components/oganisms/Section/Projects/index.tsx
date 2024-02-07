@@ -5,7 +5,7 @@ import cx from "classnames";
 
 const Projects: FC = () => {
   return (
-    <div className="container">
+    <div id="section-projects" className="container">
       <h2 className={styles.title}>My Projects</h2>
       <div className={styles.grid}>
         {Array(6)
