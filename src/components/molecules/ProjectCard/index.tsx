@@ -77,8 +77,8 @@ const ProjectCard: FC = () => {
               className={styles.svg}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path d="m6 9 6 6 6-6"></path>
             </svg>
