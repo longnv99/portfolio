@@ -2,6 +2,10 @@
   animation: rainbow 40s linear infinite;
 }
 
+body {
+  background: var(--bg-color);
+}
+
 .logo {
   stroke: var(--highlight-color);
   transition: stroke 1s;
