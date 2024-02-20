@@ -4,7 +4,7 @@
   --bg-header: #ffffffa6;
   --text-color: #000000;
   --overlay-color: rgb(255, 255, 255, 0.9);
-  --bg-color: #ffffff;
+  --bg-color: #fffffe;
 
   --hue: 223;
   --bg: hsl(var(--hue), 10%, 90%);
@@ -22,7 +22,7 @@
   --bg-header: #000000a6;
   --text-color: #ffffff;
   --overlay-color: rgb(0, 0, 0, 0.9);
-  --bg-color: #000000;
+  --bg-color: #050505;
 }
 
 ::view-transition-old(root),
