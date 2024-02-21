@@ -1,5 +1,6 @@
 .switch {
   position: relative;
+  cursor: pointer;
 }
 
 .icon {
@@ -31,6 +32,7 @@
 
 .input {
   display: block;
+  cursor: pointer;
   background-color: var(--highlight-color);
   border-radius: 0.75em;
   box-shadow: 0 0 0 0.125em hsla(var(--hue), 90%, 50%, 0),
