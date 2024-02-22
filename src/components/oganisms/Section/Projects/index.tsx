@@ -1,12 +1,23 @@
 import { FC } from "react";
 import styles from "./index.module.scss";
 import ProjectCard from "@/components/molecules/ProjectCard";
-import cx from "classnames";
+import { motion } from "framer-motion";
 
 const Projects: FC = () => {
   return (
     <div id="section-projects" className="container">
-      <h2 className={styles.title}>My Projects</h2>
+      <motion.h2
+        className={styles.title}
+        initial={{ y: 100, opacity: 0, scale: 0.6 }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+      >
+        My Projects
+      </motion.h2>
       <div className={styles.grid}>
         {Array(6)
           .fill({})
