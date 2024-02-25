@@ -1,0 +1,27 @@
+@import "@/styles/variables";
+
+.badges {
+  margin-top: 80px;
+}
+
+.title {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  & > img {
+    height: 30px;
+
+    @media (max-width: $breakpoint_mobile_max) {
+      height: 24px;
+    }
+  }
+}

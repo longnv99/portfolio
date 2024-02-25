@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const Overview: FC = () => {
   const onClick = () => {
-    const element = document.querySelector("#section-projects");
+    const element = document.querySelector("#section-about-me");
     element && element.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -39,7 +39,7 @@ const Overview: FC = () => {
           transition={{ duration: 0.6 }}
         >
           <Button className={styles.button} onClick={onClick}>
-            My Projects
+            About me
           </Button>
         </motion.div>
       </div>
