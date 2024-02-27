@@ -16,7 +16,7 @@ const AboutMe: FC = () => {
           y: 0,
           opacity: 1,
         }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.5 }}
       >
         <p
           className={styles.desc}
@@ -34,7 +34,17 @@ const AboutMe: FC = () => {
         <p
           className={styles.desc}
         >{`I want to be a good person in the field that I have chosen so I tried a lot, worked hard.`}</p>
-        <Badges />
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{ duration: 0.8 }}
+        >
+          {" "}
+          <Badges />
+        </motion.div>
       </motion.div>
     </section>
   );
