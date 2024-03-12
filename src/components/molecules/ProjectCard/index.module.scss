@@ -1,253 +1,176 @@
-.parent {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 1 / 1;
-  perspective: 1000px;
-}
+@import "@/styles/variables";
 
 .card {
-  height: 100%;
-  border-radius: 50px;
-  // background: linear-gradient(
-  //   135deg,
-  //   rgb(0, 255, 214) 0%,
-  //   rgb(8, 226, 96) 100%
-  // );
-  background: var(--highlight-color);
-  transition: all 0.5s ease-in-out;
-  transform-style: preserve-3d;
-  box-shadow: rgba(5, 71, 17, 0) 40px 50px 25px -40px,
-    rgba(5, 71, 17, 0.2) 0px 25px 25px -5px;
-}
+  position: relative;
+  height: 300px;
+  width: 100%;
 
-.glass {
-  transform-style: preserve-3d;
-  position: absolute;
-  inset: 8px;
-  border-radius: 55px;
-  border-top-right-radius: 100%;
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.349) 0%,
-    rgba(255, 255, 255, 0.815) 100%
-  );
-  /* -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px); */
-  transform: translate3d(0px, 0px, 25px);
-  border-left: 1px solid white;
-  border-bottom: 1px solid white;
-  transition: all 0.5s ease-in-out;
+  @media (max-width: $breakpoint_mobile_max) {
+    height: 56vw;
+  }
 }
 
 .content {
-  padding: 120px 60px 0px 30px;
-  transform: translate3d(0, 0, 26px);
-}
-
-.content .title {
-  display: block;
-  color: var(--highlight-color);
-  font-weight: 900;
-  font-size: 20px;
-}
-
-.content .text {
-  display: block;
-  color: var(--highlight-color);
-  font-size: 15px;
-  margin-top: 20px;
-}
-
-.bottom {
-  padding: 10px 12px;
-  transform-style: preserve-3d;
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: calc(50% + 30px);
+  height: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  transform: translate3d(0, 0, 26px);
+
+  @media (max-width: $breakpoint_mobile_max) {
+    width: 100%;
+    flex-direction: row;
+  }
 }
 
-.bottom .viewMore {
+.title {
+  & > h4 {
+    color: var(--highlight-color);
+    margin: 0;
+  }
+
+  & > h2 {
+    color: var(--text-color);
+    margin: 10px 0;
+  }
+}
+
+.description {
+  padding: 24px;
+  border-radius: 14px;
+  background-blend-mode: overlay, normal;
+  backdrop-filter: blur(40px);
+  background: lightgray 0% 0% / 154.22531366348267px 154.22531366348267px repeat,
+    radial-gradient(
+      151.92% 127.02% at 15.32% 21.04%,
+      rgba(118, 60, 172, 0.2) 0%,
+      rgba(110, 191, 244, 0.04) 77.08%,
+      rgba(70, 144, 212, 0) 100%
+    );
+
+  background-blend-mode: overlay, normal;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 8px;
+    background: var(--highlight-color);
+    top: 0;
+    left: 0;
+  }
+
+  @media (max-width: $breakpoint_mobile_max) {
+    display: none;
+  }
+}
+
+.link {
   display: flex;
-  align-items: center;
-  width: 40%;
-  justify-content: flex-end;
-  transition: all 0.2s ease-in-out;
-}
+  gap: 24px;
 
-.bottom .viewMore:hover {
-  transform: translate3d(0, 0, 10px);
-}
-
-.bottom .viewMore .viewMoreButton {
-  background: none;
-  border: none;
-  color: var(--highlight-color);
-  font-weight: bolder;
-  font-size: 12px;
-}
-
-.bottom .viewMore .svg {
-  fill: none;
-  stroke: var(--highlight-color);
-  stroke-width: 3px;
-  max-height: 15px;
-}
-
-.bottom .socialButtonsContainer {
-  display: flex;
-  gap: 10px;
-  transform-style: preserve-3d;
-}
-
-.bottom .socialButtonsContainer .socialButton {
-  width: 30px;
-  aspect-ratio: 1;
-  padding: 4px;
-  background: rgb(255, 255, 255);
-  border-radius: 50%;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: rgba(5, 71, 17, 0.5) 0px 7px 5px -5px;
-}
-
-.bottom .socialButtonsContainer .socialButton:first-child {
-  transition: transform 0.2s ease-in-out 0.4s, box-shadow 0.2s ease-in-out 0.4s;
-}
-
-.bottom .socialButtonsContainer .socialButton:nth-child(2) {
-  transition: transform 0.2s ease-in-out 0.6s, box-shadow 0.2s ease-in-out 0.6s;
-}
-
-.bottom .socialButtonsContainer .socialButton:nth-child(3) {
-  transition: transform 0.2s ease-in-out 0.8s, box-shadow 0.2s ease-in-out 0.8s;
-}
-
-.bottom .socialButtonsContainer .socialButton .svg {
-  width: 30px;
-  fill: var(--highlight-color);
-}
-
-.bottom .socialButtonsContainer .socialButton:hover {
-  background: var(--highlight-color);
-}
-
-.bottom .socialButtonsContainer .socialButton:hover .svg {
-  fill: white;
-}
-
-.bottom .socialButtonsContainer .socialButton:active {
-  background: rgb(255, 234, 0);
-}
-
-.bottom .socialButtonsContainer .socialButton:active .svg {
-  fill: black;
-}
-
-.logo {
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform-style: preserve-3d;
-  width: 58%;
-  height: 58%;
-}
-
-.logo .circle {
-  display: block;
-  position: absolute;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  top: 0;
-  right: 0;
-  box-shadow: rgba(100, 100, 111, 0.2) -10px 10px 20px 0px;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  background: rgba(255, 255, 255, 0.1);
-  transition: all 0.5s ease-in-out;
-}
-
-.logo .circle1 {
-  width: 100%;
-  transform: translate3d(0, 0, 20px);
-  top: 12px;
-  right: 12px;
-}
-
-.logo .circle2 {
-  width: 82%;
-  transform: translate3d(0, 0, 40px);
-  top: 16px;
-  right: 16px;
-  -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px);
-  transition-delay: 0.4s;
-}
-
-.logo .circle3 {
-  width: 64%;
-  transform: translate3d(0, 0, 60px);
-  top: 21px;
-  right: 21px;
-  transition-delay: 0.8s;
-}
-
-.logo .circle4 {
-  width: 44%;
-  transform: translate3d(0, 0, 80px);
-  top: 28px;
-  right: 28px;
-  transition-delay: 1.2s;
-}
-
-.logo .circle5 {
-  width: 28%;
-  transform: translate3d(0, 0, 100px);
-  top: 37px;
-  right: 37px;
-  display: grid;
-  place-content: center;
-  transition-delay: 1.6s;
-}
-
-.logo .circle5 .svg {
-  width: 20px;
-  fill: white;
-}
-
-.parent:hover .card {
-  transform: rotate3d(1, 1, 0, 30deg);
-  box-shadow: rgba(5, 71, 17, 0.3) 30px 50px 25px -40px,
-    rgba(5, 71, 17, 0.1) 0px 25px 30px 0px;
-}
-
-.parent:hover .card .bottom .socialButtonsContainer .socialButton {
-  transform: translate3d(0, 0, 50px);
-  box-shadow: rgba(5, 71, 17, 0.2) -5px 20px 10px 0px;
-}
-
-.parent:hover .card .logo .circle2 {
-  transform: translate3d(0, 0, 60px);
-}
-
-.parent:hover .card .logo .circle3 {
-  transform: translate3d(0, 0, 80px);
-}
-
-.parent:hover .card .logo .circle4 {
-  transform: translate3d(0, 0, 100px);
-}
-
-.parent:hover .card .logo .circle5 {
-  transform: translate3d(0, 0, 120px);
+  @media (max-width: $breakpoint_mobile_max) {
+    gap: 16px;
+    margin-top: 16px;
+  }
 
   & > svg {
     fill: var(--highlight-color);
+    width: 24px;
+    height: 24px;
+
+    @media (max-width: $breakpoint_mobile_max) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.content_reverse {
+  left: unset;
+  right: 0;
+
+  @media (max-width: $breakpoint_mobile_max) {
+    flex-direction: row-reverse;
+  }
+
+  & > .title > * {
+    text-align: right;
+  }
+
+  & > .description {
+    &::before {
+      right: 0;
+      left: unset;
+    }
+  }
+
+  & > .link {
+    justify-content: flex-end;
+  }
+}
+
+.image {
+  position: absolute;
+  height: calc(100% - 18px);
+  width: 50%;
+  right: 0;
+  top: 0;
+  background: var(--highlight-color);
+  padding: 18px 0 0 32px;
+  border-radius: 14px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+
+  @media (max-width: $breakpoint_mobile_max) {
+    width: calc(100% - 32px);
+    top: 68px;
+  }
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+  }
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    width: 80%;
+    height: 160%;
+    top: -30%;
+    left: -20%;
+    border-radius: 45rem;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #763cac 0%,
+      rgba(50, 15, 133, 0) 100%
+    );
+  }
+}
+
+.image_reverse {
+  right: unset;
+  left: 0;
+  padding: 20px 30px 0 0;
+
+  & > img {
+    border-top-left-radius: unset;
+    border-top-right-radius: 10px;
+  }
+
+  &::before {
+    left: unset;
+    right: -20%;
+
+    @media (max-width: $breakpoint_mobile_max) {
+      right: 0;
+    }
   }
 }
