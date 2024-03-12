@@ -1,21 +1,8 @@
 @import "@/styles/variables";
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-
-  & > * {
-    display: flex;
-    justify-content: center;
-  }
-
-  @media (max-width: $breakpoint_desktop_max) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: $breakpoint_tablet_max) {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 28px;
-  }
+  margin: 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
 }
