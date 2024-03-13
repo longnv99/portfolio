@@ -83,3 +83,9 @@ export const badges = {
   [MY_TECHNOLOGIES.JEST]:
     "https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white",
 };
+
+export const contactUrls = {
+  email: "litlong99@gmail.com",
+  github: "https://github.com/longnv99",
+  facebook: "https://www.facebook.com/longlit99",
+};
