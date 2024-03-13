@@ -1,0 +1,23 @@
+.title {
+  margin-bottom: 20px;
+}
+
+.group {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+
+  & > a {
+    border: 2px solid var(--highlight-color);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    padding: 2px;
+
+    & > svg {
+      fill: var(--text-color);
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
