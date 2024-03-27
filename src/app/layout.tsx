@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   abstract: "Portfolio | Snoopy",
   viewport:
     "width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1",
-  robots: "noindex,nofollow,noarchive",
   authors: {
     name: "Nguyen Van Long | Snoopy",
     url: "https://github.com/longnv99",
