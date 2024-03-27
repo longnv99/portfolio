@@ -36,11 +36,18 @@
   @media (max-width: $breakpoint_desktop_max) {
     height: auto;
     width: 100%;
+    overflow: hidden;
   }
 
   & > img {
     height: 100%;
     width: 100%;
+    filter: drop-shadow(30px 20px 240px var(--highlight-color));
+    transition: filter 0.8s;
+
+    @media (max-width: $breakpoint_tablet_max) {
+      filter: unset;
+    }
   }
 }
 
