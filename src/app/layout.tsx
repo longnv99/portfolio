@@ -8,6 +8,48 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Portfolio | Snoopy",
   description: "Portfolio | Snoopy",
+  abstract: "Portfolio | Snoopy",
+  viewport:
+    "width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1",
+  robots: "noindex,nofollow,noarchive",
+  authors: {
+    name: "Nguyen Van Long | Snoopy",
+    url: "https://github.com/longnv99",
+  },
+  creator: "Vercel",
+  generator: "portfolio, nextjs",
+  keywords: "portfolio, https://snoopy.io.vn, snoopy",
+  referrer: "origin",
+  themeColor: "#00a98e",
+  publisher: "index, follow",
+  openGraph: {
+    type: "website",
+    url: "https://snoopy.io.vn",
+    title: "Portfolio | Snoopy",
+    description: "Portfolio | Snoopy",
+    siteName: "Portfolio | Snoopy",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dpkqnzvmx/image/upload/v1711525804/portfolio-seo_fmo4a3.png",
+        alt: "Portfolio | Snoopy",
+        width: 600,
+        height: 600,
+        type: "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "https://snoopy.io.vn",
+    creator: "Vercel",
+    images:
+      "https://res.cloudinary.com/dpkqnzvmx/image/upload/v1711525804/portfolio-seo_fmo4a3.png",
+  },
+  appleWebApp: {
+    capable: true,
+    title: "Portfolio | Snoopy",
+    statusBarStyle: "black-translucent",
+  },
 };
 
 export default function RootLayout({

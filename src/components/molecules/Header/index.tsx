@@ -31,7 +31,7 @@ const Header: FC = () => {
   return (
     <header className={styles.header}>
       <div className={cx(styles.content, "container")}>
-        <Logo />
+        <Logo className={styles.icon} />
         <Switch checked={checked} onToggle={handleChangeThemes} />
       </div>
     </header>
