@@ -8,8 +8,48 @@
   justify-content: center;
 }
 
-.content {
+.wrapper {
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $breakpoint_desktop_max) {
+    align-items: start;
+  }
+}
+
+.thumbnail {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 76vh;
+  max-height: 780px;
+  width: auto;
   z-index: 2;
+
+  @media (max-width: $breakpoint_large_desktop_max) {
+    height: 68vh;
+    max-height: 680px;
+  }
+
+  @media (max-width: $breakpoint_desktop_max) {
+    height: auto;
+    width: 100%;
+  }
+
+  & > img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.content {
+  z-index: 3;
+
+  @media (max-width: $breakpoint_desktop_max) {
+    margin-top: 20vh;
+  }
 }
 
 .highlight {
