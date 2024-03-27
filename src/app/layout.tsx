@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Portfolio | Snoopy",
     images: [
       {
-        url: "https://res.cloudinary.com/dpkqnzvmx/image/upload/v1711525804/portfolio-seo_fmo4a3.png",
+        url: "https://res.cloudinary.com/dpkqnzvmx/image/upload/v1711539559/portfolio-seo_z0tz3i.png",
         alt: "Portfolio | Snoopy",
         width: 600,
         height: 600,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     site: "https://snoopy.io.vn",
     creator: "Vercel",
     images:
-      "https://res.cloudinary.com/dpkqnzvmx/image/upload/v1711525804/portfolio-seo_fmo4a3.png",
+      "https://res.cloudinary.com/dpkqnzvmx/image/upload/v1711539559/portfolio-seo_z0tz3i.png",
   },
   appleWebApp: {
     capable: true,
