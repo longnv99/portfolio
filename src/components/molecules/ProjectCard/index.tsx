@@ -5,12 +5,21 @@ import cx from "classnames";
 import { motion } from "framer-motion";
 import IconGithub from "@/components/atoms/Icons/IconGithub";
 import IconLink from "@/components/atoms/Icons/IconLink";
+import Link from "next/link";
 
+interface IProject {
+  url: string;
+  github: string;
+  image: string;
+  name: string;
+  description: string;
+}
 interface IProps {
+  project: IProject;
   reverse?: boolean;
 }
 
-const ProjectCard: FC<IProps> = ({ reverse }) => {
+const ProjectCard: FC<IProps> = ({ project, reverse }) => {
   return (
     <motion.div
       initial={{ y: 100, opacity: 0 }}
@@ -23,25 +32,23 @@ const ProjectCard: FC<IProps> = ({ reverse }) => {
       >
         <div className={styles.title}>
           <h4>Project name</h4>
-          <h2>Example Project</h2>
+          <h2>{project.name}</h2>
         </div>
-        <div className={styles.description}>
-          A web app for visualizing personalized Spotify data. View your top
-          artists, top tracks, recently played tracks, and detailed audio
-          information about each track. Create and save new playlists of
-          recommended tracks based on your existing playlists and more.
-        </div>
+        <div className={styles.description}>{project.description}</div>
         <div className={styles.link}>
-          <IconGithub />
-          <IconLink />
+          <Link href={project.github} target="_blank">
+            <IconGithub />
+          </Link>
+          <Link href={project.url} target="_blank">
+            <IconLink />
+          </Link>
         </div>
       </div>
-      <div className={cx(styles.image, { [styles.image_reverse]: reverse })}>
-        <img
-          src="https://venngage-wordpress.s3.amazonaws.com/uploads/2020/08/Stripe-Landing-Page-Design-1.png"
-          alt=""
-        />
-      </div>
+      <Link href={project.url} target="_blank">
+        <div className={cx(styles.image, { [styles.image_reverse]: reverse })}>
+          <img src={project.image} alt="project-image" />
+        </div>
+      </Link>
     </motion.div>
   );
 };
