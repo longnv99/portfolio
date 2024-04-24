@@ -9,9 +9,11 @@ import IconFacebook from "@/components/atoms/Icons/IconFacebook";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { contactUrls } from "@/constants";
+import IconCV from "@/components/atoms/Icons/IconCV";
 
 const Contact: FC = () => {
   const contacts = [
+    { icon: <IconCV />, url: contactUrls.cv },
     { icon: <IconEmail />, url: `mailto:${contactUrls.email}` },
     { icon: <IconGithub />, url: contactUrls.github },
     { icon: <IconFacebook />, url: contactUrls.facebook },
