@@ -89,3 +89,22 @@ export const contactUrls = {
   github: "https://github.com/longnv99",
   facebook: "https://www.facebook.com/longlit99",
 };
+
+export const projects = [
+  {
+    url: "https://movie-nvl99.vercel.app",
+    github: "https://github.com/longnv99/reactjs-movie-app",
+    image: "/images/project_movie.png",
+    name: "Movie App",
+    description:
+      "Movie App is a simple SPA (Single Page Application) that allows browsing movies written in React.",
+  },
+  {
+    url: "https://ecommerce-nvl99.vercel.app",
+    github: "https://github.com/longnv99/reactjs-web-ecommerce",
+    image: "/images/project_e_commerce.png",
+    name: "Shop - Frica",
+    description:
+      "Frica is an electronic information page (Single Page Application), create to provide clothing buying and selling services combined with payment services.",
+  },
+];
