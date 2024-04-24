@@ -85,6 +85,7 @@ export const badges = {
 };
 
 export const contactUrls = {
+  cv: "/resume/CV_NguyenVanLong_FrontEnd.pdf",
   email: "litlong99@gmail.com",
   github: "https://github.com/longnv99",
   facebook: "https://www.facebook.com/longlit99",
